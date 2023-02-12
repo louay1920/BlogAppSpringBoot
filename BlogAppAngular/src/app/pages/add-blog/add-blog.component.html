@@ -1,0 +1,31 @@
+<div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">Add Blog</h5>
+    </div>
+    <div class="card-body">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">title :</label>
+      <input type="text" id="title" class="form-control" formControlName="title" [(ngModel)]="newBlog.title">
+      <div *ngIf="form.controls.title.invalid && form.controls.title.touched">
+        <small class="text-danger">title is required.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="content">content :</label>
+      <input type="content" id="content" class="form-control" formControlName="content" [(ngModel)]="newBlog.content">
+      <div *ngIf="form.controls.content.invalid && form.controls.content.touched">
+        <small class="text-danger" *ngIf="form.controls.content.errors.required">content is required.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="author">author :</label>
+      <input type="author" id="author" class="form-control" formControlName="author" [(ngModel)]="newBlog.author">
+      <div *ngIf="form.controls.author.invalid && form.controls.author.touched">
+        <small class="text-danger" *ngIf="form.controls.author.errors.required">author is required.</small>
+          </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
+</div>

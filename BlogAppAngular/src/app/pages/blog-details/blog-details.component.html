@@ -1,0 +1,52 @@
+<div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">Blog Details</h5>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="text-right">
+          <button type="submit" class="btn btn-primary" (click) = "goToLIst()">Go to Blogs List</button>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" disabled=""  [(ngModel)]="blog.title" name = "title">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Author</label>
+                <input type="text" class="form-control" disabled=""  [(ngModel)]="blog.content" name = "author">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Content</label>
+                <input type="text" class="form-control" disabled=""  [(ngModel)]="blog.author" name = "content">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Upvote</label>
+                <input type="text" class="form-control" disabled=""  [(ngModel)]="blog.upvote" name = "upvote">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Downvote</label>
+                <input type="text" class="form-control" disabled=""  [(ngModel)]="blog.downvote" name = "downvote">
+              </div>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>

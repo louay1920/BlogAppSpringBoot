@@ -1,0 +1,21 @@
+
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a href="" class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="https://manhom.com/wp-content/uploads/2022/03/%D8%B4%D8%B1%D9%83%D8%A9-%D8%A5%D9%84%D9%8A%D8%A7-%D8%AF%D8%A7%D8%AA%D8%A7-%D9%84%D8%AD%D9%84%D9%88%D9%84-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A.jpg">
+      </div>
+    </a>
+    <a href="" class="simple-text logo-normal">
+      Elya Data
+    </a>
+  </div>
+    <ul class="nav">
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+            <a [routerLink]="[menuItem.path]">
+                <i class="nc-icon {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,68 @@
+<div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Blogs list</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>
+                Title
+              </th>
+              <th>
+                Content
+              </th>
+              <th>
+                Author
+              </th>
+              
+              <th >
+              
+                Vote
+              </th>
+              
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search title" name="title" [(ngModel)]="title" (input)="SearchTitle()">
+                </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search content" name="content" [(ngModel)]="content" (input)="SearchContent()">
+                </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search author" name="author" [(ngModel)]="author" (input)="SearchAuthor()">
+                </div>
+                </td>
+                <td></td>
+              </tr>
+              <tr *ngFor = "let blog of blogsList" [ngStyle]="{'border-color': blog.upvote > blog.downvote ? 'green' : 'red'}">
+                <td [ngStyle]="{'color': blog.upvote > blog.downvote ? 'green' : 'red'}">
+                  {{blog.title}}
+                </td>
+                <td [ngStyle]="{'color': blog.upvote > blog.downvote ? 'green' : 'red'}">
+                    {{blog.content}}
+                </td>
+                <td [ngStyle]="{'color': blog.upvote > blog.downvote ? 'green' : 'red'}">
+                    {{blog.author}}
+                </td>
+                
+                <td >
+                    <button type="submit" class="btn btn-primary" (click) = "upvote(blog.id)" >Upvote</button>
+                    <button type="submit" class="btn btn-danger" (click) = "downvote(blog.id)">Downvote</button>
+                    <button type="submit" class="btn btn-secondary" (click) = "BlogDetails(blog.id)">Dteails</button>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
